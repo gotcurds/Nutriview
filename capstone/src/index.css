@@ -1,0 +1,210 @@
+/* used ai to do styling on both the app.css and the index.css */
+
+:root {
+    /* --- Global Color Palette --- */
+    --background-color: #121212;
+    --card-background-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-secondary-color: #a0a0a0;
+    --primary-color: #9b1352; /* Accent color */
+    --primary-hover-color: #6f1d71; /* New hover color */
+    --border-color: #333;
+    --border-hover-color: #6f1d71; /* New hover color */
+    --danger-color: #dc3545; /* Delete/Alerts */
+    --danger-hover-color: #c82333;
+
+    /* New Category Colors */
+    --zaffre: #2a24a8;
+    --purple: #6f1d71;
+    --teal: #087e8b;
+    --bittersweet: #ff5a5f;
+    --labels-bg: rgba(42, 36, 168, 0.05); /* Zaffre background */
+    --category-bg: rgba(111, 29, 113, 0.05); /* Purple background */
+    --ingredients-bg: rgba(8, 126, 139, 0.05); /* Teal background */
+    --allergens-bg: rgba(255, 90, 95, 0.05); /* Bittersweet background */
+
+    /* Custom variable for Nutrition Block consistency */
+    --nutrition-bg: rgba(155, 19, 82, 0.1); /* Low opacity of var(--primary-color: #9b1352) */
+}
+
+#root, #app {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* --- Global Element Styles --- */
+
+a {
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: inherit;
+}
+a:hover {
+    color: var(--primary-hover-color);
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit; 
+    background-color: #a8a8a856;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: var(--text-color); /* Ensure button text is visible */
+}
+button:hover {
+    border-color: var(--primary-hover-color); /* Use orange for hover */
+}
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* --- Navigation Bar Styles (FIXED FOR FULL WIDTH) --- */
+
+.app-navbar {
+    background-color: #333;
+    width: 100vw; /* FIXED: Ensure full viewport width for background */
+    padding: 10px 0; 
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    left: 0; /* FIXED: Anchor it to the left edge of the viewport */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.nav-inner-content {
+    width: 100%;
+    padding: 0 20px; /* Horizontal padding for spacing on small screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add some extra padding on the right for smaller screens */
+@media (max-width: 768px) {
+    .nav-inner-content {
+        padding-right: 20px;
+    }
+    /* Reduce spacing between nav links on mobile */
+    .nav-links {
+        gap: 16px; 
+    }
+}
+
+.nav-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-title:hover {
+    color: var(--primary-hover-color);
+    cursor: default; /* Ensure the cursor doesn't imply it's clickable */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Adds space between links and button */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color); 
+}
+
+.logout-button {
+    background-color: var(--danger-color); 
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.logout-button:hover {
+    background-color: var(--danger-hover-color);
+    border-color: var(--danger-hover-color);
+}
+
+/* --- END Navigation Bar Styles --- */
+
+.all-items-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.user-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    text-align: center; /* Center content within the user list container */
+}
+
+/* --- Search/Filter Input Style --- */
+.filter-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+}
+
+/* ==================================== */
+/* 🛒 Grocery Item Card Styles */
+/* ==================================== */
+
+/* Container for all list items */
+.grocery-list {
+    list-style: none; /* Removes default bullets */
+    padding: 0;
+    width: 100%;
+}
+
+/* The Card (LI element) */
+.grocery-card {
+    background-color: var(--card-background-color);
+    /* FIXED: Border syntax corrected */
+    border: 1px solid var(--border-color); 
+    border-radius: 12px;
+    margin-bottom: 15px; 
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0;
+}

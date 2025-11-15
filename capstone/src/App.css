@@ -1,0 +1,374 @@
+ 
+
+/* --- Content Containers (GUARANTEED BUFFER) --- */
+
+.all-items-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 20px;
+    width: 100%;
+}
+
+.user-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Search/Filter Input Style --- */
+.filter-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
+    color: var(--text-color);
+}
+
+/* ==================================== */
+/* 🛒 Grocery Item Card Styles */
+/* ==================================== */
+
+/* Container for all list items */
+.grocery-list {
+    list-style: none; /* Removes default bullets */
+    padding: 0;
+    width: 100%;
+}
+
+/* The Card (LI element) */
+.grocery-card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--border-color); /* FIXED: Border syntax corrected */
+    border-radius: 12px;
+    margin-bottom: 15px; 
+    padding: 15px 25px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    display: flex; 
+    flex-direction: column;
+}
+
+.grocery-card:hover {
+    border-color: var(--border-hover-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+}
+
+/* Header Row (Image, Name/Brands, Actions) */
+.card-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.card-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    flex-shrink: 0;
+}
+
+.card-title-section {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.card-product-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.card-brands {
+    display: block;
+    font-size: 0.85em;
+    color: var(--text-secondary-color);
+}
+
+/* Action Controls (Edit/Delete/Quantity) */
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.card-quantity-display {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+.card-quantity-input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    background-color: #333;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Styling for specific action buttons (if you prefer classes over general button style) */
+.btn-delete {
+    background-color: var(--danger-color);
+}
+.btn-delete:hover {
+    background-color: var(--danger-hover-color);
+    border-color: var(--danger-hover-color);
+}
+
+
+/* Detail Section (Nutrition/Ingredients) */
+.card-details {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+    font-size: 0.9em;
+    color: var(--text-secondary-color);
+    padding-left: 0;
+}
+
+.card-details p {
+    margin: 4px 0;
+}
+
+/* Nutrition Block Styling */
+.card-nutrition {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 4px solid var(--primary-color);
+    background-color: var(--nutrition-bg); /* Using low-opacity primary color var */
+    border-radius: 0 4px 4px 0;
+}
+
+.card-nutrition strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-nutrition-item {
+    margin-right: 15px;
+    display: inline-block;
+    font-size: 0.95em;
+}
+
+/* Generic block for other details like ingredients, labels, etc. */
+.card-detail-block {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background-color: rgba(80, 80, 80, 0.1);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Assigning specific colors to each detail type */
+.card-labels {
+    border-left: 4px solid var(--zaffre);
+    background-color: var(--labels-bg);
+}
+.card-labels strong {
+    color: var(--zaffre);
+}
+
+.card-category {
+    border-left: 4px solid var(--purple);
+    background-color: var(--category-bg);
+}
+.card-category strong {
+    color: var(--purple);
+}
+
+.card-ingredients {
+    border-left: 4px solid var(--teal);
+    background-color: var(--ingredients-bg);
+}
+.card-ingredients strong {
+    color: var(--teal);
+}
+
+.card-allergens-block {
+    border-left: 4px solid var(--bittersweet);
+    background-color: var(--allergens-bg);
+}
+
+.card-allergens {
+    color: var(--bittersweet);
+    font-weight: bold;
+}
+
+/* ==================================== */
+/* 👤 Auth Form Styles (Login/Signup)  */
+/* ==================================== */
+
+.auth-container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  min-height: calc(100vh - 100px); 
+}
+
+.auth-form-card {
+  background-color: var(--card-background-color);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.auth-container input {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #2c2c2c;
+  color: var(--text-color);
+  font-size: 1em;
+  transition: all 0.2s ease-in-out;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+.auth-container button[type="submit"] {
+  padding: 14px;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.auth-container button[type="submit"]:hover {
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
+}
+
+.auth-container p {
+  margin-top: 1.5rem;
+  color: var(--text-secondary-color);
+}
+
+/* ==================================== */
+/* 📱 Media Queries for Responsiveness */
+/* ==================================== */
+
+/* --- Mobile View (for screens smaller than 768px) --- */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; 
+    }
+
+    /* GUARANTEED HORIZONTAL BUFFER FOR MAIN CONTENT */
+    .all-items-container,
+    .user-list-container {
+        margin: 1rem auto;
+        padding: 10px 25px 10px 5px; /* Shifted left by 10px */
+    }
+
+    /* Make headings smaller on mobile */
+    h1 {
+        font-size: 1.8em; 
+    }
+    h2 {
+        font-size: 1.5em; /* Adjusted for better hierarchy */
+    }
+
+    /* Auth container fixes */
+    .auth-container {
+        padding: 0 25px 0 5px; /* Shifted left by 10px */
+        margin: 5vh 0;
+        justify-content: flex-start;
+        min-height: unset;
+    }
+
+    .auth-form-card {
+        margin: 0;
+        padding: 2rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .grocery-card {
+        padding: 1rem;
+    }
+
+    /* CARD HEADER WRAPPING FIX */
+    .card-header {
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .card-title-section {
+        flex-basis: 100%; /* Forces the product name/brand to take a full line */
+        order: -1; 
+    }
+
+    .card-img {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    .card-actions {
+        order: 2;
+        width: auto;
+        flex-shrink: 0;
+        flex-grow: 1; /* Pushes buttons to the right */
+        justify-content: flex-end; /* Aligns buttons to the right */
+        margin-top: 0; 
+    }
+    
+    .card-details {
+        padding-left: 0;
+    }
+}
+
+/* Specific adjustments for very narrow screens (e.g., iPhone SE) */
+@media (max-width: 412px) {
+    .auth-form-card {
+        padding: 1.5rem 0.8rem;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        max-width: 100%;
+    }
+}
+
+/* --- Large Desktop View (for screens larger than 1200px) --- */
+@media (min-width: 1200px) {
+    .all-items-container,
+    .user-list-container {
+        max-width: 1100px; /* Allow content to spread out more */
+    }
+}
